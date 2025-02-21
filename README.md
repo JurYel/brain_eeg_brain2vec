@@ -11,7 +11,7 @@ Tests on Brain EEG to Vector
 ![sample](sample.png?raw=true)
 
 # Sample generated image on inference
-![display](image-reconstruction.png?raw=true)
+![display](sample-image-reconstruction.png?raw=true)
 
 Reference:
 https://huggingface.co/radiata-ai/brain2vec
