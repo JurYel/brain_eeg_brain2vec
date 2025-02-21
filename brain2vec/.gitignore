@@ -1,0 +1,5 @@
+# Ignore the "runs/" directory
+runs/
+
+# Ignore macOS system files
+.DS_Store

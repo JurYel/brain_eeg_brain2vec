@@ -1,0 +1,46 @@
+# get brain2vec model repository
+git clone https://huggingface.co/radiata-ai/brain2vec
+cd brain2vec
+
+# set up virtual environment
+python -m venv venv_brain2vec
+source venv_brain2vec/bin/activate
+
+# install Python libraries
+pip install -r requirements.txt
+
+# create the csv file inputs.csv listing the scan paths and other info
+# this script loads the radiata-ai/brain-structure dataset
+python create_csv.py
+
+mkdir ae_cache
+mkdir ae_output
+
+# train the model
+for Linux:
+nohup python train_brain2vec.py train \
+  --dataset_csv /home/ubuntu/brain2vec/inputs.csv \
+  --cache_dir   ./ae_cache \
+  --output_dir  ./ae_output \
+  --n_epochs    10 \
+> train_log.txt 2>&1 &
+
+for Windows:
+start /b python train_brain2vec.py train --dataset_csv "D:\\VSCode_Projects\\data_science\\python-training\\nlp_training\\chatbot_training\\langchain_tests\\llama.cpp-tests\\brain_eeg_tests\\brain2vecinputs.csv" --cache_dir ".\ae_cache" --output_dir ".\ae_output" --n_epochs 10 > train_log.txt 2>&1
+
+Note: replace "C:\\Users\\Your_User\\brain2vec\\inputs.csv" with the directory where inputs.csv is located. make sure to use "\\" instead of "\"
+
+
+
+
+# model inference
+python inference_brain2vec.py \
+  --checkpoint_path /path/to/model.pth \
+  --input_images /path/to/img1.nii.gz /path/to/img2.nii.gz \
+  --output_dir ./vae_inference_outputs \
+  --embeddings_filename pca_output/pca_embeddings_2.npy \
+  --save_recons
+
+
+# Inference 
+python inference_brain2vec.py --checkpoint_path autoencoder_final.pth --input_images C:\Users\JURYEL~1\.cache\huggingface\datasets\downloads\extracted\0727ee5a4413879d44d02203cdaa873f6d568425205bde4e0d65371492d72f6f\NKI-RS\sub-A00085951\ses-FLU1\anat\msub-A00085951_ses-FLU1_T1w_brain_affine_mni.nii.gz C:\Users\JURYEL~1\.cache\huggingface\datasets\downloads\extracted\0727ee5a4413879d44d02203cdaa873f6d568425205bde4e0d65371492d72f6f\NKI-RS\sub-A00085951\ses-BAS1\anat\msub-A00085951_ses-BAS1_T1w_brain_affine_mni.nii.gz --output_dir ./vae_inference_outputs --embeddings_filename pca_output/pca_embeddings.npy --save_recons

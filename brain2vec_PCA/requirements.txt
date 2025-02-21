@@ -1,0 +1,23 @@
+# requirements.txt
+
+# PyTorch (CUDA or CPU version).
+torch>=1.12
+
+# Install MONAI Generative first
+monai-generative
+
+# Now force reinstall MONAI Weekly so its (newer) MONAI version takes precedence
+--force-reinstall
+monai-weekly
+
+# For perceptual losses in MONAI's generative module.
+lpips
+
+# Common Python libraries
+pandas
+numpy
+nibabel
+tqdm
+matplotlib
+datasets
+scikit-learn

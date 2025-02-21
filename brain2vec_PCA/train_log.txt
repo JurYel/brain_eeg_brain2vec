@@ -1,0 +1,9 @@
+Loading and flattening dataset from: inputs.csv
+Dataset shape after flattening: (2194, 614400)
+Fitting StandardPCA
+Done fitting PCA. Transforming data to embeddings...
+Embeddings shape: (2194, 1200)
+Reconstruction shape: (2194, 614400)
+Saved embeddings to ./pca_output\pca_embeddings.npy
+Saved reconstructions to ./pca_output\pca_reconstructions.npy
+Saved PCA model to ./pca_output\pca_model.joblib

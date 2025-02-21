@@ -1,0 +1,6 @@
+image_uid,age,sex,image_path,split
+0,81,2,/Users/jbrown2/.cache/huggingface/datasets/downloads/extracted/6429865a89f9ae54df1c3c2db5d0f1f25cf7dd43cb87704d76ed08cf8c194aba/OASIS-2/sub-OASIS20133/ses-03/anat/msub-OASIS20133_ses-03_T1w_brain_affine_mni.nii.gz,train
+1,78,2,/Users/jbrown2/.cache/huggingface/datasets/downloads/extracted/6429865a89f9ae54df1c3c2db5d0f1f25cf7dd43cb87704d76ed08cf8c194aba/OASIS-2/sub-OASIS20133/ses-01/anat/msub-OASIS20133_ses-01_T1w_brain_affine_mni.nii.gz,train
+2,87,1,/Users/jbrown2/.cache/huggingface/datasets/downloads/extracted/6429865a89f9ae54df1c3c2db5d0f1f25cf7dd43cb87704d76ed08cf8c194aba/OASIS-2/sub-OASIS20105/ses-02/anat/msub-OASIS20105_ses-02_T1w_brain_affine_mni.nii.gz,train
+3,86,1,/Users/jbrown2/.cache/huggingface/datasets/downloads/extracted/6429865a89f9ae54df1c3c2db5d0f1f25cf7dd43cb87704d76ed08cf8c194aba/OASIS-2/sub-OASIS20105/ses-01/anat/msub-OASIS20105_ses-01_T1w_brain_affine_mni.nii.gz,train
+4,84,1,/Users/jbrown2/.cache/huggingface/datasets/downloads/extracted/6429865a89f9ae54df1c3c2db5d0f1f25cf7dd43cb87704d76ed08cf8c194aba/OASIS-2/sub-OASIS20102/ses-02/anat/msub-OASIS20102_ses-02_T1w_brain_affine_mni.nii.gz,train

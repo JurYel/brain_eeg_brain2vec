@@ -1,0 +1,22 @@
+# Ignore the "runs/" directory
+runs/
+
+# Ignore macOS system files
+.DS_Store
+
+.vscode
+brain2vec/ae_cache
+brain2vec/ae_output
+brain2vec/inputs.csv
+brain2vec_PCA/inputs.csv
+
+__pycache__/
+brain2vec/__pycache__/
+brain2vec_PCA/__pycache__/
+
+# remove generated files
+brain2vec_PCA/pca_model.joblib
+brain2vec_PCA/pca_output/pca_model.joblib
+brain2vec_PCA/pca_output/pca_reconstructions.npy
+brain2vec/vae_inference_outputs/pca_output/pca_model.joblib
+brain2vec/vae_inference_outputs/pca_output/pca_reconstructions.npy

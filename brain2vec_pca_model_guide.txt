@@ -1,0 +1,40 @@
+# get brain2vec_PCA model repository
+git lfs install  # Ensure Git LFS is installed and enabled
+git clone https://huggingface.co/radiata-ai/brain2vec_PCA
+cd brain2vec_PCA
+git lfs pull
+
+# set up virtual environemt
+python3 -m venv venv_brain2vec_PCA
+source venv_brain2vec_PCA/bin/activate
+
+# install Python libraries
+pip install -r requirements.txt
+
+# create the csv file inputs.csv listing the scan paths and other info
+# this script loads the radiata-ai/brain-structure dataset from Hugging Face
+python create_csv.py
+
+mkdir pca_output
+
+# train the model
+nohup python train_brain2vec_PCA.py \
+    --inputs_csv inputs.csv \
+    --output_dir ./pca_output \
+    --pca_type standard \
+    --n_components 1200 \
+    > train_log.txt 2>&1 &
+
+# model inference
+python inference_brain2vec_PCA.py \
+    --pca_model pca_model.joblib \
+    --input_images /path/to/img1.nii.gz /path/to/img2.nii.gz \
+    --output_dir pca_output \
+    --embeddings_filename pca_embeddings_2 \
+    --save_recons
+
+python inference_brain2vec_PCA.py \
+    --pca_model pca_model.joblib \
+    --csv_input inputs.csv \
+    --output_dir pca_output \
+    --embeddings_filename pca_embeddings_all
