@@ -37,7 +37,7 @@ def display_original_and_reconstruction(original_fpath, reconstructed_fpath, n=1
 
     plt.tight_layout()
     # plt.title("Original vs Reconstructed Image ", plt.gcf())
-    plt.title("Original vs Reconstructed MRI Image ")
+    # plt.title("Original vs Reconstructed MRI Image ")
     plt.show()
 
 if __name__ == "__main__":
